@@ -21,9 +21,11 @@
         <td><img style="width:50px;height:40px" src="media/images/students/<?php echo $all_stu['photo'] ?>" alt=""></td>
         <td>
             <a id="stuView" student_data="<?php echo $all_stu['sl'] ?>" href="#" class="btn btn-info" >View</a>
-            <a href="#" class="btn btn-danger" >Edit</a>
+            <a id="stu_edit" student_data="<?php echo $all_stu['sl'] ?>" href="#" class="btn btn-danger" >Edit</a>
             <a id="delete_student" student_data="<?php echo $all_stu['sl'] ?>" href="#" class="btn btn-warning" >Delete</a>
         </td>
     </tr>
 
     <?php endwhile; ?>
+
+    

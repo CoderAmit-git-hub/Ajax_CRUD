@@ -103,6 +103,55 @@
             return false;
         });
 
+        // Edit student data
+        $(document).on('click','a#stu_edit', function(){
+
+            let stu_id = $(this).attr('student_data');
+
+            $.ajax({
+                url : 'inc/ajax/update_student.php',
+                data : { id : stu_id },
+                method : "POST",
+                success : function(data){
+                    $stu_dtObj = JSON.parse(data);
+
+                    $("#stu_upd_form input[name='name']").val($stu_dtObj.name);
+                    $("#stu_upd_form input[name='stu_up_id']").val($stu_dtObj.sl);
+                    $("#stu_upd_form input[name='email']").val($stu_dtObj.email);
+                    $("#stu_upd_form input[name='mobile']").val($stu_dtObj.cell);
+                    $("#stu_upd_form select[name='loct']").val($stu_dtObj.location);
+                    $("#stu_upd_form input[name='old_photo']").val($stu_dtObj.photo);
+                    $("#up_img img").attr('src','media/images/students/'+$stu_dtObj.photo);
+
+                }
+            });
+
+            $("#update_stu_modal").modal('show');
+            return false;
+        });
+
+        // Update student data
+        $(document).on('submit','#stu_upd_form',function(event){
+            event.preventDefault();
+
+            $.ajax({
+                url : "inc/ajax/edit_student.php",
+                data : new FormData(this),
+                method : "POST",
+                contentType : false,
+                processData : false,
+                success : function(data){
+                    
+                    $("#update_stu_modal").modal('hide');
+                    showAllData();
+                    $(".confMess").html("<p class='alert alert-success alert-dismissible fade show'>Data Updated Successfull<button type='button' class='btn-close' data-bs-dismiss='alert'></button></p>");
+                }
+
+            });
+
+            return false;
+        });
+
 
 
     });

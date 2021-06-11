@@ -12,6 +12,10 @@
     $cell     = $_POST['mobile'];
     $location = $_POST['loct'];
 
+    if( empty($name) ){
+        return false;
+    }
+
     //File upload
     $data = fileUpload($_FILES['photo'],'../../media/images/students/','["jpg","png","jpeg"]');
     $fileDbName = $data['file_name'];

@@ -81,6 +81,75 @@
         </div>
     </div>
 
+    <!-- Update Student Data Modal -->
+    <div id="update_stu_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="stu_upd_form" action="" method="POST" enctype="multipart/form-data">
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="altNoti"></div>
+                                <h4>Update Student Data</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 row">
+                                    <label for="intOne" class="col-sm-4 col-form-label">Full Name</label>
+                                    <div class="col-sm-8">
+                                        <input name="name" type="text" class="form-control" id="intOne">
+                                        <input name="stu_up_id" type="hidden" >
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="intTwo" class="col-sm-4 col-form-label">Email Address</label>
+                                    <div class="col-sm-8">
+                                        <input name="email" type="email" class="form-control" id="intTwo">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="intThree" class="col-sm-4 col-form-label">Mobile Number</label>
+                                    <div class="col-sm-8">
+                                        <input name="mobile" type="text" class="form-control" id="intThree">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="intFour" class="col-sm-4 col-form-label">Location</label>
+                                    <div class="col-sm-8">
+                                        <select name="loct" id="intEight" class="form-select">
+                                            <option value="">-Select-</option>
+                                            <option value="Dhaka">Dhaka</option>
+                                            <option value="Mymensingh">Mymensingh</option>
+                                            <option value="Rangpur">Rangpur</option>
+                                            <option value="Rajshahi">Rajshahi</option>
+                                            <option value="Khulna">Khulna</option>
+                                            <option value="Sylhet">Sylhet</option>
+                                            <option value="Comilla">Comilla</option>
+                                            <option value="Barishal">Barishal</option>
+                                            <option value="Chittagong">Chittagong</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="up_img" class="mb-3 form-label">
+                                    <img width="150px" src="" alt="">
+                                    <input type="hidden" name="old_photo">
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="formFile" class="col-sm-4 col-form-label">Upload</label>
+                                    <div class="col-sm-8">
+                                        <input name="new_photo" class="form-control" type="file" id="formFile">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button name="subBtn" type="submit" class="btn btn-primary mb-3">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Single Student Data Modal -->
     <div id="sigStuMol" class="modal fade">
         <div class="modal-dialog">

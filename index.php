@@ -89,7 +89,7 @@
                     <form id="stu_upd_form" action="" method="POST" enctype="multipart/form-data">
                         <div class="card">
                             <div class="card-header">
-                                <div id="altNoti"></div>
+                                <div id="update_mess"></div>
                                 <h4>Update Student Data</h4>
                             </div>
                             <div class="card-body">

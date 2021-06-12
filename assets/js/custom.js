@@ -103,10 +103,8 @@
             return false;
         });
 
-        // Edit student data
-        $(document).on('click','a#stu_edit', function(){
-
-            let stu_id = $(this).attr('student_data');
+        // Student data show Update
+        function stuDtSwUp(stu_id){
 
             $.ajax({
                 url : 'inc/ajax/update_student.php',
@@ -125,6 +123,14 @@
 
                 }
             });
+        }
+
+        // Edit student data
+        $(document).on('click','a#stu_edit', function(){
+
+            let stu_id = $(this).attr('student_data');
+
+            stuDtSwUp(stu_id);
 
             $("#update_stu_modal").modal('show');
             return false;
@@ -142,9 +148,10 @@
                 processData : false,
                 success : function(data){
                     
-                    $("#update_stu_modal").modal('hide');
+                    
                     showAllData();
-                    $(".confMess").html("<p class='alert alert-success alert-dismissible fade show'>Data Updated Successfull<button type='button' class='btn-close' data-bs-dismiss='alert'></button></p>");
+                    $("#update_mess").html("<p class='alert alert-success alert-dismissible fade show'>Data Updated Successfull<button type='button' class='btn-close' data-bs-dismiss='alert'></button></p>");
+                    stuDtSwUp(data);
                 }
 
             });
